@@ -2,7 +2,7 @@
 
 A commonJS API that allows you to store your files on IPFS and retrieve them from IPFS based on the filename.
 
-In ESM we would use ipfs-core or helia but without dynamic importing, I want to do this in commonJS and use Helia and use dynamic imports.
+In ESM we would use ipfs-core or helia without dynamic importing, I want to do this in commonJS and use Helia and use dynamic imports.
 
 # Run the server
 
