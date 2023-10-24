@@ -43,7 +43,7 @@ app.get('/retreive', async (req, res)=>{
     const fs = unixfs(helia)
     
    
-    const filename = req.body.filename;
+    const filename = req.body.originalname;
     let cid;
     let text;
 
