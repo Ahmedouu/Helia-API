@@ -1,12 +1,15 @@
 # IPFS-API
 
-A commonJS API that allows you to store your files on ipfs and retrieve them from ipfs based on the filename.
+A commonJS API that allows you to store your files on IPFS and retrieve them from IPFS based on the filename.
 
 In ESM we would use ipfs-core or helia but without dynamic importing, I want to do this in commonJS and use Helia and use dynamic imports.
 
-# So here is how it should go
+# Run the server
 
-
+```
+npm install
+npm start
+```
 # you have the first endpoint /upload
 
 POST request body/Form-data file ->> spawn helia node 
