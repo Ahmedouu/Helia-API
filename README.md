@@ -17,12 +17,6 @@ POST request -->  body/Form-data --> key=file, value=yourfile.extension
 example: 
 ![Alt text](image.png)
 
-spawn helia node 
-
-take the file, extract it's name, upload it to helia node, returns the CID
-takes the CID add the pair (filename, CID) to the hash map 
-resolve to your file has been added 
-
 
 # the second endpoint /retreive is like dis:
 
@@ -32,8 +26,9 @@ GET request body/raw/JSON,
     "filename": "the_name_of_the_file_you_uploaded.extension"
 }
 ```
+example:
 
-take the name of the file you want to retrieve from ipfs -don't forget the extension- ->> spawn another helia node ->> resolve the request with the content of the file. 
+![Alt text](image-1.png)
 
 
 # Questions
