@@ -1,9 +1,5 @@
 const express = require('express');
-const FS = require('fs');
-
-
 const multer = require("multer");
-const express = require('express')
 const app = express();
 const upload = multer()
 
@@ -43,7 +39,7 @@ app.get('/retreive', async (req, res)=>{
     const fs = unixfs(helia)
     
    
-    const filename = req.body.originalname;
+    const filename = req.body.filename;
     let cid;
     let text;
 
