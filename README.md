@@ -33,6 +33,6 @@ take the name of the file you want to retrieve from ipfs -don't forget the exten
 
 # Questions
 
-Why hashmaps ? well IPFS/Helia uses content addressing, there is no easy way to store the file with it's name and encodings, simply we just write the buffer and each buffer is under a CID, and I don't expect you to memorize the CID, i ALSO LOVE HASHMAPS </3
+Why hashmaps ? well IPFS/Helia uses content addressing, there is no easy way to store the file with it's name and encodings, simply we just write the buffer and each buffer is under a CID, and I don't expect you to memorize the CID, i ALSO LOVE HASHMAPS <3
 
 
