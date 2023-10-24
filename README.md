@@ -12,7 +12,7 @@ npm start
 ```
 # you have the first endpoint /upload
 
-POST request body/Form-data file ->> spawn helia node 
+POST request -->  body/Form-data --> key=file, value=yourfile.extension ->> spawn helia node 
 
 take the file, extract it's name, upload it to helia node, returns the CID
 takes the CID add the pair (filename, CID) to the hash map 
