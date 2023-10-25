@@ -7,22 +7,23 @@ let hashMap = new Map();
 
 app.use(express.json());
 
+//node spawner with filesystem
+async function createNode(){
+    const { createHelia } = await import('helia')
+    const helia = await createHelia()
+    const { unixfs } = await import('@helia/unixfs')
+    const fs = unixfs(helia)
+    return fs
+}
+
 app.post('/upload', upload.single('file'), async (req, res) => {
     try{
     const data = req.file.buffer
 
     console.log(req.file) //we don't need this but it might be useful to have this data to reconstruct the file 
     //spawn helia node 
-    const { createHelia } = await import('helia')
-    const { unixfs } = await import('@helia/unixfs')
-  
-    // create a Helia node
-    const helia = await createHelia()
-
-    // print out our node's PeerId
-    console.log(helia.libp2p.peerId)
-
-    const fs = unixfs(helia)
+    const fs = await createNode();
+    
     const cid = await fs.addBytes(data)
     hashMap.set(req.file.originalname, cid)
     res.status(201).send( `File uploaded to ipfs and CID has been stored., ${cid}`)}
@@ -33,11 +34,9 @@ app.post('/upload', upload.single('file'), async (req, res) => {
   });
 
 app.get('/retreive', async (req, res)=>{
-    const { createHelia } = await import('helia')
-    const helia = await createHelia()
-    const { unixfs } = await import('@helia/unixfs')
-    const fs = unixfs(helia)
+    //spawn helia node
     
+    const fs = await createNode();
    
     const filename = req.body.filename;
     let cid;
@@ -49,9 +48,8 @@ app.get('/retreive', async (req, res)=>{
         if (!cid){
             console.error('oops we could not find the cid, make sure you upload the file to IPFS first')
         }
-        const decoder = new TextDecoder() // decode uint arrays into strings
-        
-   
+        // decode uint arrays into strings
+        const decoder = new TextDecoder() 
          for await (const chunk of fs.cat(cid)) {
                 text = decoder.decode(chunk, {stream: true});
                 console.log("je marche dans la tempete", text)
