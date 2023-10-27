@@ -5,7 +5,8 @@ A commonJS API that allows you to store your files on IPFS and retrieve them fro
 In ESM we would use ipfs-core or helia without dynamic importing, I want to do this in commonJS and use Helia and use dynamic imports.
 
 This API spawns two HELIA nodes one is used to write files and one is used to retrieve them
-
+A video with an improved version and explanation:
+https://www.youtube.com/watch?v=q5bKjuu3kdE
 # Run the server
 
 ```
