@@ -39,4 +39,4 @@ example:
 
 Why hashmaps ? well IPFS/Helia uses content addressing, there is no easy way to store the file with it's name and encodings, simply we just write the buffer and each buffer is under a CID, and I don't expect you to memorize the CID, i ALSO LOVE HASHMAPS <3
 
-
+Why use createNode() twice ? for clarity, it's not needed though one node is good enough
