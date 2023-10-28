@@ -15,7 +15,6 @@ async function createNode(){
     const fs = unixfs(helia)
     return fs
 }
-
 app.post('/upload', upload.single('file'), async (req, res) => {
     try{
     const data = req.file.buffer
